@@ -1,0 +1,22 @@
+.mainBtn{
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    text-align: center;
+    border-radius: 25px;
+    color: #000000;
+    display: block;
+    font-family: inherit;
+    font-size: 25px;
+    padding: 15px;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 20%;
+    transition: background-color 0.3s ease-in, border 0.3s ease-in, color 0.3s ease-in;
+}
+
+.mainBtn:hover{
+    background-color: #4ED8D8;
+    border: 2px solid #4ED8D8;
+    color: #ffffff;
+}

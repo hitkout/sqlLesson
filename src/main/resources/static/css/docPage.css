@@ -1,0 +1,28 @@
+.marginContentDocRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contentDocLeft{
+    position: relative;
+    width: 80%;
+}
+
+.contentDocRight{
+    width: 20%;
+    min-height: 100vh;
+    background-color: #20222B;
+}
+
+.docLinks{
+    display: grid;
+    max-height: 100vh;
+    overflow: auto;
+}
+
+.docLinks a{
+    text-decoration: none;
+    color: #fff;
+    padding: 20px;
+    font-size: 35px;
+}

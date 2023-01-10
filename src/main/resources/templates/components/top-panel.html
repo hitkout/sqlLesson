@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<!--/*@thymesVar id="authUser" type="ru.osminkin.springvideohosting.model.User"*/-->
-<!--/*@thymesVar id="user" type="ru.osminkin.springvideohosting.model.User"*/-->
+<!--/*@thymesVar id="authUser" type="ru.osminkin.sqlesson.model.User"*/-->
+<!--/*@thymesVar id="user" type="ru.osminkin.sqlesson.model.User"*/-->
 <head>
     <meta charset="UTF-8">
     <title>top-panel</title>
@@ -13,7 +13,7 @@
             <div class="row-top-panel height-100">
                 <div class="top-panel__left">
                     <a th:href="@{'/'}" class="top-panel__logo">
-                        itube
+                        SiteName
                     </a>
                 </div>
                 <div class="top-panel__right">
@@ -26,6 +26,12 @@
                                     || #httpServletRequest.getRequestURL() == 'http://localhost:8080/photos'
                                     || #httpServletRequest.requestURI == '/users'
                                     || #httpServletRequest.requestURI == '/subscriptions'} ? 'top-panel__nav-link-constant' : ''">Главная</a>
+                            </li>
+                            <li>
+                                <a class="top-panel__nav-link" th:href="'/documentation'">Документация</a>
+                            </li>
+                            <li>
+                                <a class="top-panel__nav-link" th:href="'/lessons'">Задачи</a>
                             </li>
                             <li th:if="${authUser == null}">
                                 <a class="top-panel__nav-link" th:href="'/auth/success'">Войти</a>
