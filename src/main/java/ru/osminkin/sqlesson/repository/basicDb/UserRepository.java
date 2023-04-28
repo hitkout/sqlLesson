@@ -1,16 +1,16 @@
-package ru.osminkin.sqlesson.repository;
+package ru.osminkin.sqlesson.repository.basicDb;
 
 import lombok.NonNull;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import ru.osminkin.sqlesson.model.User;
+import ru.osminkin.sqlesson.model.basicDb.User;
 
 import javax.transaction.Transactional;
 import java.util.Optional;
 
-interface UserRepository1 extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
     @Override
     @NonNull
     Optional<User> findById(@NonNull Long id);
@@ -65,41 +65,4 @@ interface UserRepository1 extends JpaRepository<User, Long> {
 
     @Query(value = "select count(follower) from subscriptions where follow_user = :user", nativeQuery = true)
     Long getSubscribersCount(@Param("user") User user);
-}
-
-
-public interface UserRepository extends JpaRepository<User, Long> {
-    @Override
-    @NonNull
-    Optional<User> findById(@NonNull Long id);
-    Optional<User> findByEmail(String email);
-
-    User findUserById(Long id);
-
-    @Transactional
-    @Modifying
-    @Query(value = "update users set status = 'BANNED' where id = :bannedUser", nativeQuery = true)
-    void banUserById(@Param("bannedUser") Long bannedUser);
-
-    @Transactional
-    @Modifying
-    @Query(value = "update users set status = 'ACTIVE' where id = :bannedUser", nativeQuery = true)
-    void unbanUserById(@Param("bannedUser") Long bannedUser);
-
-    @Query(value = "select status from users where id = :userId", nativeQuery = true)
-    String getUserStatus(@Param("userId") Long userId);
-
-    @Transactional
-    @Modifying
-    @Query(value = "update users set photo = :photoName where id = :id", nativeQuery = true)
-    void updatePhoto(@Param("id") Long id, @Param("photoName") String photoName);
-
-    @Query(value = "select * from users where lower(first_name) like %:search% or lower(last_name) like %:search%",
-            nativeQuery = true)
-    Iterable<User> findBySearch(@Param("search") String search);
-
-    @Transactional
-    @Modifying
-    @Query(value = "update users set password = :password where id = :id", nativeQuery = true)
-    void changeUserPassword(@Param("id") Long id, @Param("password") String password);
 }

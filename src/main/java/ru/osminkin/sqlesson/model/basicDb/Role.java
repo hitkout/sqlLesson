@@ -1,4 +1,4 @@
-package ru.osminkin.sqlesson.model;
+package ru.osminkin.sqlesson.model.basicDb;
 
 import org.springframework.security.core.GrantedAuthority;
 

@@ -25,7 +25,6 @@ public class MainPageController {
     public String mainPage(Model model){
         model.addAttribute("authUser", userService.getCurrentUser());
         model.addAttribute("user", userService.getCurrentUser());
-        model.addAttribute("photos", photoService.getFiveRandomPhotos());
         return "general/main";
     }
 

@@ -1,23 +1,21 @@
-package ru.osminkin.sqlesson.model;
+package ru.osminkin.sqlesson.model.basicDb;
 
 import lombok.Data;
+
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 @Data
 @Entity
-@Table(name = "photos")
-public class Photo {
+@Table(name = "comments")
+public class Record {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "filename")
-    private String filename;
-    @Column(name = "text")
-    private String text;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
+    @Column(name = "text")
+    private String text;
     @JoinColumn(name = "add_date")
-    private Timestamp addDate;
+    private String addDate;
 }

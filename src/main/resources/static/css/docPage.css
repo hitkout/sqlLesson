@@ -20,9 +20,26 @@
     overflow: auto;
 }
 
-.docLinks a{
-    text-decoration: none;
-    color: #fff;
+.docRightLink {
     padding: 20px;
-    font-size: 35px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    background: unset;
+    color: #fff;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    outline: none;
+    font-size: 30px;
+    transition: color 0.2s ease-in, border-bottom 1s ease-in, border-top 1s ease-in;
+}
+
+.docRightLink-constant {
+    color: #4ED8D8;
+    border-color: #4ED8D8;
+}
+
+.docRightLink:hover {
+    color: #4ED8D8;
+    border-color: #4ED8D8;
 }

@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.osminkin.sqlesson.model.Role;
-import ru.osminkin.sqlesson.model.Status;
-import ru.osminkin.sqlesson.model.User;
-import ru.osminkin.sqlesson.repository.UserRepository;
+import ru.osminkin.sqlesson.model.basicDb.Role;
+import ru.osminkin.sqlesson.model.basicDb.Status;
+import ru.osminkin.sqlesson.model.basicDb.User;
+import ru.osminkin.sqlesson.repository.basicDb.UserRepository;
 
 import java.util.Optional;
 

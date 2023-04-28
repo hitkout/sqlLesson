@@ -1,13 +1,11 @@
 package ru.osminkin.sqlesson.services;
 
 import org.springframework.stereotype.Service;
-import ru.osminkin.sqlesson.model.Record;
-import ru.osminkin.sqlesson.model.User;
-import ru.osminkin.sqlesson.repository.RecordRepository;
+import ru.osminkin.sqlesson.model.basicDb.Record;
+import ru.osminkin.sqlesson.model.basicDb.User;
+import ru.osminkin.sqlesson.repository.basicDb.RecordRepository;
 
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.*;
 
 @Service
 public class RecordService {

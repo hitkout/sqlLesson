@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import ru.osminkin.sqlesson.model.Photo;
+import ru.osminkin.sqlesson.model.basicDb.Photo;
 import ru.osminkin.sqlesson.services.UserService;
 
 import java.io.IOException;
@@ -23,18 +23,6 @@ public class UserSettingsPageController {
         model.addAttribute("authUser", userService.getCurrentUser());
         model.addAttribute("changePassword", null);
         return "channel/channelSettings";
-    }
-
-    @PostMapping(value = "/settings", params = "name")
-    public String postChangeName(@RequestParam("name") String name) {
-        userService.changeName(userService.getCurrentUser().getId(), name);
-        return "redirect:/settings";
-    }
-
-    @PostMapping(value = "/settings", params = "surname")
-    public String postChangeSurname(@RequestParam("surname") String surname) {
-        userService.changeSurname(userService.getCurrentUser().getId(), surname);
-        return "redirect:/settings";
     }
 
     @PostMapping(value = "/settings", params = {"oldPassword", "newPassword", "newPasswordConfirm"})

@@ -1,11 +1,11 @@
-package ru.osminkin.sqlesson.repository;
+package ru.osminkin.sqlesson.repository.basicDb;
 
 import lombok.NonNull;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import ru.osminkin.sqlesson.model.Photo;
-import ru.osminkin.sqlesson.model.User;
+import ru.osminkin.sqlesson.model.basicDb.Photo;
+import ru.osminkin.sqlesson.model.basicDb.User;
 
 import java.util.Optional;
 

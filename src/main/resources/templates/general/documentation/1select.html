@@ -16,7 +16,7 @@
 
 <div class="marginContentDocRow">
     <div class="contentDocLeft" style="color: #ffffff">
-        <h1 style="font-size: 50px;">Оператор SQL</h1>
+        <h1 style="font-size: 50px;">Оператор SELECT</h1>
         <p style="font-size: 35px">Оператор SELECT используется для выбора данных из базы данных.
             Возвращенные данные сохраняются в таблице результатов, называемой набором результатов.</p>
 
@@ -26,11 +26,11 @@
         <p style="font-size: 35px">Здесь column1, column2, ... - это имена полей таблицы, из которой вы хотите выбрать данные.<br>
             Если вы хотите выбрать все поля, доступные в таблице, используйте следующий синтаксис:</p>
 
-        <div class="sqlCodeDiv"><span class="sqlColorSelect">SELECT * FROM</span> table_name;</div>
-        <div class="hideBlock" th:replace="components/sqlQuery :: sqlQuery(style='hide', idForBut='but1', idForSql='safc', result='1')"></div>
+        <div class="sqlCodeDiv"><span class="sqlColorSelect">SELECT * FROM</span> manufacturer;</div>
+        <div class="hideBlock" th:replace="components/sqlQuery :: sqlQuery(current_page='1select', style='hide', idForBut='but1', idForSql='safc', result='1')"></div>
     </div>
 
-    <div class="hideBlock" th:replace="components/sqlQuery :: sqlQuery(idForSql='safc2', idForBut='but2', result='2', content='select * from users')"></div>
+    <div class="hideBlock" th:replace="components/sqlQuery :: sqlQuery(current_page='1select', idForSql='safc2', idForBut='but2', result='2', content='select * from manufacturer')"></div>
 
     <div th:replace="components/contentDocRight :: contentDocRight"></div>
 </div>
@@ -48,8 +48,8 @@
     });
 
     function checkQueryText(){
-        if (safcV.toString() !== "select * from users"){
-            safcV.innerText = 'select * from users';
+        if (safcV.toString() !== "select * from manufacturer"){
+            safcV.innerText = 'select * from manufacturer';
             return true;
         }
         else {

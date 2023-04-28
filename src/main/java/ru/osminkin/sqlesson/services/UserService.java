@@ -11,8 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import ru.osminkin.sqlesson.controller.ResourceNotFoundException;
-import ru.osminkin.sqlesson.model.User;
-import ru.osminkin.sqlesson.repository.UserRepository;
+import ru.osminkin.sqlesson.model.basicDb.User;
+import ru.osminkin.sqlesson.repository.basicDb.UserRepository;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -80,18 +80,6 @@ public class UserService {
         if (file.delete()){
             log.info("Photo {} deleted", file.getName());
         }
-    }
-
-    public void changeName(Long id, String name){
-        User user = userRepository.getById(id);
-        user.setFirstName(name);
-        userRepository.save(user);
-    }
-
-    public void changeSurname(Long id, String surname){
-        User user = userRepository.getById(id);
-        user.setFirstName(surname);
-        userRepository.save(user);
     }
 
     public boolean changeUserPassword(Long id, String oldPassword, String password){

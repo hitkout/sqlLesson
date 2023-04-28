@@ -4,8 +4,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.osminkin.sqlesson.model.User;
-import ru.osminkin.sqlesson.repository.UserRepository;
+import ru.osminkin.sqlesson.model.basicDb.User;
+import ru.osminkin.sqlesson.repository.basicDb.UserRepository;
 
 @Service
 public class AuthenticatedUserService {

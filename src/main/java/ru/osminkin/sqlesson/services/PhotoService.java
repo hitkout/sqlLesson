@@ -4,9 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import ru.osminkin.sqlesson.model.Photo;
-import ru.osminkin.sqlesson.model.User;
-import ru.osminkin.sqlesson.repository.PhotoRepository;
+import ru.osminkin.sqlesson.model.basicDb.Photo;
+import ru.osminkin.sqlesson.model.basicDb.User;
+import ru.osminkin.sqlesson.repository.basicDb.PhotoRepository;
 
 import java.io.File;
 import java.io.IOException;

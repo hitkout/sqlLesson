@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<!--/*@thymesVar id="authUser" type="ru.osminkin.sqlesson.model.User"*/-->
-<!--/*@thymesVar id="user" type="ru.osminkin.sqlesson.model.User"*/-->
 <head>
     <meta charset="UTF-8">
     <title>top-panel</title>
@@ -21,20 +19,16 @@
                         <ul>
                             <li>
                                 <a th:href="@{'/'}" class="top-panel__nav-link"
-                                    th:classappend="${#httpServletRequest.getRequestURL() == 'http://localhost:8080/'
-                                    || #httpServletRequest.getRequestURL() == 'http://localhost:8080/videos'
-                                    || #httpServletRequest.getRequestURL() == 'http://localhost:8080/photos'
-                                    || #httpServletRequest.requestURI == '/users'
-                                    || #httpServletRequest.requestURI == '/subscriptions'} ? 'top-panel__nav-link-constant' : ''">Главная</a>
+                                    th:classappend="${#httpServletRequest.getRequestURI() == '/'} ? 'top-panel__nav-link-constant' : ''">Главная</a>
                             </li>
                             <li>
-                                <a class="top-panel__nav-link" th:href="'/documentation'">Документация</a>
+                                <a class="top-panel__nav-link" th:classappend="${#httpServletRequest.getRequestURI() == '/documentation'} ? 'top-panel__nav-link-constant' : ''" th:href="'/documentation'">Документация</a>
                             </li>
                             <li>
                                 <a class="top-panel__nav-link" th:href="'/lessons'">Задачи</a>
                             </li>
                             <li th:if="${authUser == null}">
-                                <a class="top-panel__nav-link" th:href="'/auth/success'">Войти</a>
+                                <a class="top-panel__nav-link" th:classappend="${#httpServletRequest.getRequestURI() == '/auth/login'} ? 'top-panel__nav-link-constant' : ''" th:href="'/auth/login'">Войти</a>
                             </li>
                             <li th:if="${authUser != null}">
                                 <a th:href="@{'/channel/' + ${authUser.getId()}}" class="top-panel__nav-link"

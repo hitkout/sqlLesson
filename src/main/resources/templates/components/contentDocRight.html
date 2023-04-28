@@ -7,14 +7,13 @@
     <body>
         <div class="contentDocRight" th:fragment="contentDocRight">
             <div class="docLinks">
-                <a class="" th:href="@{'/documentation/sql'}">SQL</a>
-                <a class="" th:href="@{'/documentation/sql'}">SQL Select</a>
-                <a class="" th:href="@{'/documentation/sql'}">SQL Where</a>
-                <a class="" th:href="@{'/documentation/sql'}">SQL And, Or, Not</a>
-                <a class="" th:href="@{'/documentation/sql'}">SQL Order By</a>
-                <a class="" th:href="@{'/documentation/sql'}">SQL Insert Into</a>
-                <a class="" th:href="@{'/documentation/sql'}">SQL Null Values</a>
-                <a class="" th:href="@{'/documentation/sql'}">SQL Update</a>
+                <a class="docRightLink" th:classappend="${#httpServletRequest.getRequestURI() == '/documentation/1select'} ? 'docRightLink-constant' : ''" th:href="@{'/documentation/1select'}">SQL Select</a>
+                <a class="docRightLink" th:classappend="${#httpServletRequest.getRequestURI() == '/documentation/2where'} ? 'docRightLink-constant' : ''" th:href="@{'/documentation/2where'}">SQL Where</a>
+                <a class="docRightLink" th:classappend="${#httpServletRequest.getRequestURI() == '/documentation/3'} ? 'docRightLink-constant' : ''" th:href="@{'/documentation/3AndOrNot'}">SQL And, Or, Not</a>
+                <a class="docRightLink" th:classappend="${#httpServletRequest.getRequestURI() == '/documentation/4'} ? 'docRightLink-constant' : ''" th:href="@{'/documentation/sql'}">SQL Order By</a>
+                <a class="docRightLink" th:classappend="${#httpServletRequest.getRequestURI() == '/documentation/5'} ? 'docRightLink-constant' : ''" th:href="@{'/documentation/sql'}">SQL Insert Into</a>
+                <a class="docRightLink" th:classappend="${#httpServletRequest.getRequestURI() == '/documentation/6'} ? 'docRightLink-constant' : ''" th:href="@{'/documentation/sql'}">SQL Null Values</a>
+                <a class="docRightLink" th:classappend="${#httpServletRequest.getRequestURI() == '/documentation/7'} ? 'docRightLink-constant' : ''" th:href="@{'/documentation/sql'}">SQL Update</a>
             </div>
         </div>
     </body>

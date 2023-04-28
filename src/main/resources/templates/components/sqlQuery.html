@@ -6,7 +6,7 @@
 </head>
 <body>
     <div th:fragment="sqlQuery">
-        <form id="formInputQuery" th:action="@{'/documentation/sql'}" th:method="post">
+        <form id="formInputQuery" th:action="@{'/documentation/'+${current_page}}" th:method="post">
             <div class="form-control-settings">
                 <label th:for="${idForSql}" th:style="${style == 'hide'} ? 'display:none' : ''">
                     <input name="result" th:value="${result}"/>
