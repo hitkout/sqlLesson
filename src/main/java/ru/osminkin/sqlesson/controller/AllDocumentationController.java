@@ -12,13 +12,13 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/documentation")
-public class AllPagesController {
+public class AllDocumentationController {
     private final UserService userService;
     private final QueryService queryService;
     private List<Map<String, Object>> resultQuery;
     private String resultFromDoc;
 
-    public AllPagesController(UserService userService, QueryService queryService) {
+    public AllDocumentationController(UserService userService, QueryService queryService) {
         this.userService = userService;
         this.queryService = queryService;
     }
@@ -47,7 +47,7 @@ public class AllPagesController {
     public ModelAndView postSendQuery(@PathVariable("current_page") String current_page,
                                       @RequestParam("sqlQuery") String sqlQuery,
                                       @RequestParam("result") String result) {
-        resultQuery = queryService.getRecordByRoll(sqlQuery);
+        resultQuery = queryService.getRecordByRoll(sqlQuery, false);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:" + current_page);
         this.resultFromDoc = result;
