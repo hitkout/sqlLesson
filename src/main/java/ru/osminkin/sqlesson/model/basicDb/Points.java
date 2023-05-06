@@ -15,5 +15,5 @@ public class Points {
     @JoinColumn(name = "user_id")
     private User user;
     @Column(name = "point")
-    private String point;
+    private Long point;
 }

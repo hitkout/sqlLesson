@@ -5,10 +5,6 @@
     font-family: "Teko", sans-serif;
 }
 
-a{
-    text-decoration: none;
-}
-
 .container {
     width: 65%;
     margin: 0 auto;
@@ -54,6 +50,7 @@ a{
 }
 
 .top-panel__nav-link {
+    text-decoration: none;
     margin-right: 30px;
     cursor: pointer;
     text-transform: uppercase;

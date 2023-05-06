@@ -2,20 +2,20 @@ package ru.osminkin.sqlesson.services;
 
 import org.springframework.stereotype.Service;
 import ru.osminkin.sqlesson.constants.SqlConstants;
-import ru.osminkin.sqlesson.repository.basicDb.RecordRepository;
+import ru.osminkin.sqlesson.repository.basicDb.TasksRepository;
 
 import java.sql.*;
 import java.util.*;
 
 @Service
 public class QueryService {
-    private RecordRepository repository;
+    private TasksRepository tasksRepository;
     private final String urlDb = "jdbc:postgresql://localhost:5432/testDb";
     private final String usr = "postgres";
     private final String pas = "geronymo1337";
 
-    QueryService(RecordRepository repository){
-        this.repository = repository;
+    QueryService(TasksRepository tasksRepository){
+        this.tasksRepository = tasksRepository;
     }
 
     public List<Map<String, Object>> getRecordByRoll(String sqlQuery, boolean isChangeQuery) {

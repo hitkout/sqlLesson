@@ -25,13 +25,33 @@
     <h1 style="font-size: 50px">Обучающий веб-сервис</h1>
 
     <a class="mainBtn" th:href="@{'/documentation'}">Документация</a>
-    <a class="mainBtn" th:href="@{'/lessons'}">Задачи</a>
+    <a class="mainBtn" th:href="@{'/tasks'}">Задачи</a>
 
     <h3 style="width: 70%; font-size: 21px; margin-top: 50px; color: #bbbbbb">
         Сайт поможет каждому, кто хочет приобрести или повысить свои навыки в изучении как одного, так и нескольких языков.
         Суть обучения состоит в том, что вы сами изучаете написанную документацию и на основе пройденных материалов,
         можете попрактиковаться на подготовленных задачах.
     </h3>
+
+    <table style="color: #dddddd; width: 100%; margin-bottom: 20px; border: 1px solid #dddddd; border-collapse: collapse;">
+        <h1>Рейтинг</h1>
+        <div th:each="point, isState : ${points}">
+            <thead>
+            <tr>
+                <th th:if="${isState.index == 0}" style="background: #379a9a; border: 1px solid #dddddd; padding: 5px;">№</th>
+                <th th:if="${isState.index == 0}" style="border: 1px solid #dddddd; padding: 5px;">username</th>
+                <th th:if="${isState.index == 0}" style="border: 1px solid #dddddd; padding: 5px;">points</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="background: #379a9a; border: 1px solid #dddddd; padding: 5px;" th:text="${isState.index+1}"></td>
+                <td style="border: 1px solid #dddddd; padding: 5px;" th:text="*{point.getUser().getUsername()}"></td>
+                <td style="border: 1px solid #dddddd; padding: 5px;" th:text="*{point.getPoint()}"></td>
+            </tr>
+            </tbody>
+        </div>
+    </table>
 </div>
 
 <script src="/scripts/infiniteScroll.js"></script>
