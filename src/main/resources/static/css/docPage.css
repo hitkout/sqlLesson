@@ -21,6 +21,7 @@
 }
 
 .docRightLink {
+    text-decoration: none;
     padding: 20px;
     cursor: pointer;
     text-transform: uppercase;
@@ -42,4 +43,8 @@
 .docRightLink:hover {
     color: #4ED8D8;
     border-color: #4ED8D8;
+}
+
+.completedLesson {
+    color: #00ff00;
 }

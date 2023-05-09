@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import ru.osminkin.sqlesson.model.basicDb.Photo;
+import ru.osminkin.sqlesson.model.Photo;
 import ru.osminkin.sqlesson.services.UserService;
 
 import java.io.IOException;

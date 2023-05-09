@@ -1,8 +1,8 @@
 package ru.osminkin.sqlesson.services;
 
 import org.springframework.stereotype.Service;
-import ru.osminkin.sqlesson.model.basicDb.Points;
-import ru.osminkin.sqlesson.repository.basicDb.PointsRepository;
+import ru.osminkin.sqlesson.model.Points;
+import ru.osminkin.sqlesson.repository.PointsRepository;
 
 import java.util.List;
 

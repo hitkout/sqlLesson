@@ -1,8 +1,8 @@
 package ru.osminkin.sqlesson.services;
 
 import org.springframework.stereotype.Service;
-import ru.osminkin.sqlesson.model.basicDb.Tasks;
-import ru.osminkin.sqlesson.repository.basicDb.TasksRepository;
+import ru.osminkin.sqlesson.model.Tasks;
+import ru.osminkin.sqlesson.repository.TasksRepository;
 
 import java.util.List;
 
@@ -20,5 +20,13 @@ public class TasksService {
 
     public Tasks getById(Long taskId){
         return tasksRepository.getById(taskId);
+    }
+
+    public boolean previousPageExists(Long taskId){
+        return tasksRepository.previousPageExists(taskId).isPresent();
+    }
+
+    public boolean nextPageExists(Long taskId){
+        return tasksRepository.nextPageExists(taskId).isPresent();
     }
 }

@@ -3,7 +3,7 @@ package ru.osminkin.sqlesson.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.osminkin.sqlesson.model.basicDb.User;
+import ru.osminkin.sqlesson.model.User;
 import ru.osminkin.sqlesson.services.*;
 
 import java.util.List;
@@ -50,6 +50,8 @@ public class AllTasksController {
         model.addAttribute("resultFromDoc", resultFromDoc);
         model.addAttribute("task", tasksService.getById(taskId));
         model.addAttribute("isCorrectResult", isCorrectResult);
+        model.addAttribute("previousPageExists", tasksService.previousPageExists(taskId));
+        model.addAttribute("nextPageExists", tasksService.nextPageExists(taskId));
         isCorrectResult = false;
         resultQuery = null;
         return "general/tasks/task";

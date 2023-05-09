@@ -2,13 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
     <link rel="stylesheet" href="/css/body.css">
     <link rel="stylesheet" href="/css/top-panel.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/mainBtn.css">
     <link rel="stylesheet" href="/css/docPage.css">
     <link rel="stylesheet" href="/css/sql.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css" />
+    <title>Title</title>
 </head>
 <body>
     <div th:replace="components/top-panel :: top-panel"></div>
@@ -16,8 +15,10 @@
     <div class="task">
         <h1 class="taskTitle" th:text="${task.getId()}"></h1>
         <p class="taskText" th:text="${task.getTaskText()}"></p>
-        <div th:replace="components/sqlQueryTask :: sqlQueryTask(current_page='task', idForBut='but1', idForSql='safc', result='1')"></div>
+        <div th:replace="components/sqlQueryTask :: sqlQueryTask(idForBut='but1', idForSql='safc', result='1')"></div>
         <p th:if="${isCorrectResult}">Correct!</p>
+        <a th:if="*{previousPageExists}" th:href="@{'/tasks/'+*{task.getId()-1}}">Предыдущая страница</a>
+        <a th:if="*{nextPageExists}" th:href="@{'/tasks/'+*{task.getId()+1}}">Следующая страница</a>
     </div>
 </body>
 </html>

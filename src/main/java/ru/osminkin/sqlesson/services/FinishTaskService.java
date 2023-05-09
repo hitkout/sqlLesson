@@ -1,10 +1,10 @@
 package ru.osminkin.sqlesson.services;
 
 import org.springframework.stereotype.Service;
-import ru.osminkin.sqlesson.model.basicDb.FinishTask;
-import ru.osminkin.sqlesson.model.basicDb.Tasks;
-import ru.osminkin.sqlesson.model.basicDb.User;
-import ru.osminkin.sqlesson.repository.basicDb.FinishTaskRepository;
+import ru.osminkin.sqlesson.model.FinishTask;
+import ru.osminkin.sqlesson.model.Tasks;
+import ru.osminkin.sqlesson.model.User;
+import ru.osminkin.sqlesson.repository.FinishTaskRepository;
 
 import java.util.ArrayList;
 import java.util.List;

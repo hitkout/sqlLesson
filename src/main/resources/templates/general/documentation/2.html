@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/body.css">
+    <link rel="stylesheet" href="/css/top-panel.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/mainBtn.css">
+    <link rel="stylesheet" href="/css/docPage.css">
+    <link rel="stylesheet" href="/css/sql.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" type="text/css" />
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="components/top-panel :: top-panel"></div>
+
+<div class="marginContentDocRow">
+    <div class="contentDocLeft" style="color: #ffffff">
+        <h1 style="font-size: 50px;">Предложение WHERE</h1>
+        <p style="font-size: 35px">Предложение WHEREиспользуется для фильтрации записей.
+            Он используется для извлечения только тех записей, которые удовлетворяют заданному условию.</p>
+
+        <div class="sqlCodeDiv">
+            <span class="sqlColorSelect">SELECT</span> column1, column2, ...<br>
+            <span class="sqlColorSelect">FROM</span> table_name;<br>
+            <span class="sqlColorSelect">WHERE</span> condition;
+        </div>
+        <br>
+        <div class="sqlCodeDiv">
+            <span class="sqlColorSelect">SELECT * FROM</span> manufacturer<br>
+            <span class="sqlColorSelect">WHERE</span> phone='123123';
+        </div>
+        <div class="hideBlock" th:replace="components/sqlQueryLesson :: sqlQueryLesson(style='hide', idForBut='but1', idForSql='safc', result='1')"></div>
+    </div>
+
+    <div class="hideBlock" th:replace="components/sqlQueryLesson :: sqlQueryLesson(idForSql='safc2', idForBut='but2', result='2', content='select * from manufacturer where phone=\'123123\';')"></div>
+
+    <div th:replace="components/contentDocRight :: contentDocRight"></div>
+
+    <form id="formSaveLesson" th:action="@{'/documentation/'+${current_page}}" th:method="post">
+        <button type="submit" name="saveLesson">Отправить запрос</button>
+    </form>
+</div>
+</body>
+<script>
+    const formInputQuery = document.getElementById('formInputQuery');
+    const safcV = document.getElementById('safc');
+
+    formInputQuery.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (checkQueryText() === true){
+            e.currentTarget.submit();
+        }
+    });
+
+    function checkQueryText(){
+        if (safcV.toString() !== "select * from manufacturer where phone=\'123123\';"){
+            safcV.innerText = 'select * from manufacturer where phone=\'123123\';';
+            return true;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+</html>

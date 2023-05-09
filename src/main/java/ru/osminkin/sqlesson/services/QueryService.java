@@ -2,7 +2,7 @@ package ru.osminkin.sqlesson.services;
 
 import org.springframework.stereotype.Service;
 import ru.osminkin.sqlesson.constants.SqlConstants;
-import ru.osminkin.sqlesson.repository.basicDb.TasksRepository;
+import ru.osminkin.sqlesson.repository.TasksRepository;
 
 import java.sql.*;
 import java.util.*;

@@ -27,6 +27,9 @@
                             <li>
                                 <a class="top-panel__nav-link" th:classappend="${#httpServletRequest.getRequestURI() == '/tasks'} ? 'top-panel__nav-link-constant' : ''" th:href="'/tasks'">Задачи</a>
                             </li>
+                            <li>
+                                <a class="top-panel__nav-link" th:classappend="${#httpServletRequest.getRequestURI() == '/sandbox'} ? 'top-panel__nav-link-constant' : ''" th:href="'/sandbox'">Песочница</a>
+                            </li>
                             <li th:if="${authUser == null}">
                                 <a class="top-panel__nav-link" th:classappend="${#httpServletRequest.getRequestURI() == '/auth/login'} ? 'top-panel__nav-link-constant' : ''" th:href="'/auth/login'">Войти</a>
                             </li>

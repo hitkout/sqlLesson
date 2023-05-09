@@ -1,4 +1,5 @@
 .mainBtn{
+    text-decoration: none;
     cursor: pointer;
     background-color: #ffffff;
     border: 2px solid #ffffff;
